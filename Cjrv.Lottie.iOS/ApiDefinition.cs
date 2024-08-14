@@ -3,7 +3,6 @@ using System.Runtime.InteropServices;
 using CoreAnimation;
 using CoreGraphics;
 using Foundation;
-using Lottie;
 using ObjCRuntime;
 using UIKit;
 
@@ -13,11 +12,6 @@ namespace Crjv.Lottie.iOS
     [BaseType(typeof(UIControl), Name = "_TtC6Lottie15AnimatedControl")]
     interface AnimatedControl
     {
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)aDecoder __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder aDecoder);
-
         // @property (getter = isEnabled, nonatomic) BOOL enabled;
         [Export("enabled")]
         bool Enabled { [Bind("isEnabled")] get; set; }
@@ -55,11 +49,6 @@ namespace Crjv.Lottie.iOS
     [BaseType(typeof(AnimatedControl), Name = "_TtC6Lottie14AnimatedButton")]
     interface AnimatedButton
     {
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)aDecoder __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder aDecoder);
-
         // -(BOOL)beginTrackingWithTouch:(UITouch * _Nonnull)touch withEvent:(UIEvent * _Nullable)event __attribute__((warn_unused_result("")));
         [Export("beginTrackingWithTouch:withEvent:")]
         bool BeginTrackingWithTouch(UITouch touch, [NullAllowed] UIEvent @event);
@@ -77,11 +66,6 @@ namespace Crjv.Lottie.iOS
     [BaseType(typeof(AnimatedControl), Name = "_TtC6Lottie14AnimatedSwitch")]
     interface AnimatedSwitch
     {
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)aDecoder __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder aDecoder);
-
         // -(void)endTrackingWithTouch:(UITouch * _Nullable)touch withEvent:(UIEvent * _Nullable)event;
         [Export("endTrackingWithTouch:withEvent:")]
         void EndTrackingWithTouch([NullAllowed] UITouch touch, [NullAllowed] UIEvent @event);
@@ -109,11 +93,6 @@ namespace Crjv.Lottie.iOS
         [Export("initWithFrame:")]
         [DesignatedInitializer]
         NativeHandle Constructor(CGRect frame);
-
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)coder __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder coder);
     }
 
     // @interface BaseAnimationLayer : CALayer
@@ -128,11 +107,6 @@ namespace Crjv.Lottie.iOS
         [Export("initWithLayer:")]
         [DesignatedInitializer]
         NativeHandle Constructor(NSObject layer);
-
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)coder __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder coder);
     }
 
     // @interface BaseCompositionLayer : BaseAnimationLayer
@@ -140,11 +114,6 @@ namespace Crjv.Lottie.iOS
     [DisableDefaultCtor]
     interface BaseCompositionLayer
     {
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
-
         // -(instancetype _Nonnull)initWithLayer:(id _Nonnull)layer __attribute__((objc_designated_initializer));
         [Export("initWithLayer:")]
         [DesignatedInitializer]
@@ -222,11 +191,6 @@ namespace Crjv.Lottie.iOS
         [Export("initWithFrame:")]
         [DesignatedInitializer]
         NativeHandle Constructor(CGRect frame);
-
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)coder __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder coder);
 
         // @property (nonatomic, strong) CompatibleAnimation * _Nullable compatibleAnimation;
         [NullAllowed, Export("compatibleAnimation", ArgumentSemantic.Strong)]
@@ -391,11 +355,6 @@ namespace Crjv.Lottie.iOS
         [Export("initWithLayer:")]
         [DesignatedInitializer]
         NativeHandle Constructor(NSObject layer);
-
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
     }
 
     // @interface CoreAnimationLayer : BaseAnimationLayer
@@ -407,11 +366,6 @@ namespace Crjv.Lottie.iOS
         [Export("initWithLayer:")]
         [DesignatedInitializer]
         NativeHandle Constructor(NSObject layer);
-
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
 
         // -(void)layoutSublayers;
         [Export("layoutSublayers")]
@@ -439,23 +393,13 @@ namespace Crjv.Lottie.iOS
         [Export("initWithLayer:")]
         [DesignatedInitializer]
         NativeHandle Constructor(NSObject layer);
-
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)coder __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder coder);
     }
 
     // @interface DebugLayer : CALayer
     [BaseType(typeof(CALayer), Name = "_TtC6Lottie10DebugLayer")]
     [DisableDefaultCtor]
     interface DebugLayer
-    {
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
-    }
+    {    }
 
     // @interface GradientRenderLayer : CAGradientLayer
     [BaseType(typeof(CAGradientLayer), Name = "_TtC6Lottie19GradientRenderLayer")]
@@ -465,11 +409,6 @@ namespace Crjv.Lottie.iOS
         [Export("initWithLayer:")]
         [DesignatedInitializer]
         NativeHandle Constructor(NSObject layer);
-
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)coder __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder coder);
     }
 
     // @interface GroupLayer : BaseAnimationLayer
@@ -477,11 +416,6 @@ namespace Crjv.Lottie.iOS
     [DisableDefaultCtor]
     interface GroupLayer
     {
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
-
         // -(instancetype _Nonnull)initWithLayer:(id _Nonnull)layer __attribute__((objc_designated_initializer));
         [Export("initWithLayer:")]
         [DesignatedInitializer]
@@ -496,22 +430,12 @@ namespace Crjv.Lottie.iOS
         [Export("initWithLayer:")]
         [DesignatedInitializer]
         NativeHandle Constructor(NSObject layer);
-
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
     }
 
     // @interface ImageLayer : BaseCompositionLayer
     [BaseType(typeof(BaseCompositionLayer), Name = "_TtC6Lottie10ImageLayer")]
     interface ImageLayer
     {
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
-
         // -(instancetype _Nonnull)initWithLayer:(id _Nonnull)layer __attribute__((objc_designated_initializer));
         [Export("initWithLayer:")]
         [DesignatedInitializer]
@@ -522,11 +446,6 @@ namespace Crjv.Lottie.iOS
     [BaseType(typeof(BaseAnimationLayer), Name = "_TtC6Lottie28InfiniteOpaqueAnimationLayer")]
     interface InfiniteOpaqueAnimationLayer
     {
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
-
         // -(instancetype _Nonnull)initWithLayer:(id _Nonnull)layer __attribute__((objc_designated_initializer));
         [Export("initWithLayer:")]
         [DesignatedInitializer]
@@ -547,11 +466,6 @@ namespace Crjv.Lottie.iOS
         [DesignatedInitializer]
         NativeHandle Constructor(NSObject layer);
 
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
-
         // -(void)drawInContext:(CGContextRef _Nonnull)ctx;
         [Export("drawInContext:")]
         void DrawInContext(CGContext ctx);
@@ -566,11 +480,6 @@ namespace Crjv.Lottie.iOS
         [Export("initWithLayer:")]
         [DesignatedInitializer]
         NativeHandle Constructor(NSObject layer);
-
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
     }
 
     // @interface LottieAnimationViewBase : UIView
@@ -601,11 +510,6 @@ namespace Crjv.Lottie.iOS
         [Export("initWithFrame:")]
         [DesignatedInitializer]
         NativeHandle Constructor(CGRect frame);
-
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)coder __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder coder);
     }
 
     // @interface LottieAnimationView : LottieAnimationViewBase
@@ -616,11 +520,6 @@ namespace Crjv.Lottie.iOS
         [Export("initWithFrame:")]
         [DesignatedInitializer]
         NativeHandle Constructor(CGRect frame);
-
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)aDecoder __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder aDecoder);
 
         // @property (readonly, nonatomic) CGSize intrinsicContentSize;
         [Export("intrinsicContentSize")]
@@ -649,11 +548,6 @@ namespace Crjv.Lottie.iOS
         [DesignatedInitializer]
         NativeHandle Constructor(NSObject layer);
 
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
-
         // +(BOOL)needsDisplayForKey:(NSString * _Nonnull)key __attribute__((warn_unused_result("")));
         [Static]
         [Export("needsDisplayForKey:")]
@@ -678,11 +572,6 @@ namespace Crjv.Lottie.iOS
     [DisableDefaultCtor]
     interface MaskCompositionLayer
     {
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
-
         // -(instancetype _Nonnull)initWithLayer:(id _Nonnull)layer __attribute__((objc_designated_initializer));
         [Export("initWithLayer:")]
         [DesignatedInitializer]
@@ -709,22 +598,12 @@ namespace Crjv.Lottie.iOS
         [Export("initWithLayer:")]
         [DesignatedInitializer]
         NativeHandle Constructor(NSObject layer);
-
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
     }
 
     // @interface NullCompositionLayer : CompositionLayer
     [BaseType(typeof(CompositionLayer), Name = "_TtC6Lottie20NullCompositionLayer")]
     interface NullCompositionLayer
     {
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
-
         // -(instancetype _Nonnull)initWithLayer:(id _Nonnull)layer __attribute__((objc_designated_initializer));
         [Export("initWithLayer:")]
         [DesignatedInitializer]
@@ -735,11 +614,6 @@ namespace Crjv.Lottie.iOS
     [BaseType(typeof(BaseCompositionLayer), Name = "_TtC6Lottie12PreCompLayer")]
     interface PreCompLayer
     {
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
-
         // -(instancetype _Nonnull)initWithLayer:(id _Nonnull)layer __attribute__((objc_designated_initializer));
         [Export("initWithLayer:")]
         [DesignatedInitializer]
@@ -754,11 +628,6 @@ namespace Crjv.Lottie.iOS
         [Export("initWithLayer:")]
         [DesignatedInitializer]
         NativeHandle Constructor(NSObject layer);
-
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
     }
 
     // @interface RepeaterLayer : BaseAnimationLayer
@@ -766,11 +635,6 @@ namespace Crjv.Lottie.iOS
     [DisableDefaultCtor]
     interface RepeaterLayer
     {
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
-
         // -(instancetype _Nonnull)initWithLayer:(id _Nonnull)layer __attribute__((objc_designated_initializer));
         [Export("initWithLayer:")]
         [DesignatedInitializer]
@@ -785,22 +649,12 @@ namespace Crjv.Lottie.iOS
         [Export("initWithLayer:")]
         [DesignatedInitializer]
         NativeHandle Constructor(NSObject layer);
-
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
     }
 
     // @interface ShapeContainerLayer : CALayer
     [BaseType(typeof(CALayer), Name = "_TtC6Lottie19ShapeContainerLayer")]
     interface ShapeContainerLayer
     {
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
-
         // -(instancetype _Nonnull)initWithLayer:(id _Nonnull)layer __attribute__((objc_designated_initializer));
         [Export("initWithLayer:")]
         [DesignatedInitializer]
@@ -812,11 +666,6 @@ namespace Crjv.Lottie.iOS
     [DisableDefaultCtor]
     interface ShapeItemLayer
     {
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
-
         // -(instancetype _Nonnull)initWithLayer:(id _Nonnull)layer __attribute__((objc_designated_initializer));
         [Export("initWithLayer:")]
         [DesignatedInitializer]
@@ -827,11 +676,6 @@ namespace Crjv.Lottie.iOS
     [BaseType(typeof(BaseCompositionLayer), Name = "_TtC6Lottie10ShapeLayer")]
     interface ShapeLayer
     {
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
-
         // -(instancetype _Nonnull)initWithLayer:(id _Nonnull)layer __attribute__((objc_designated_initializer));
         [Export("initWithLayer:")]
         [DesignatedInitializer]
@@ -848,11 +692,6 @@ namespace Crjv.Lottie.iOS
         [DesignatedInitializer]
         NativeHandle Constructor(NSObject layer);
 
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
-
         // -(void)drawInContext:(CGContextRef _Nonnull)ctx;
         [Export("drawInContext:")]
         void DrawInContext(CGContext ctx);
@@ -866,22 +705,12 @@ namespace Crjv.Lottie.iOS
         [Export("initWithLayer:")]
         [DesignatedInitializer]
         NativeHandle Constructor(NSObject layer);
-
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
     }
 
     // @interface SolidLayer : BaseCompositionLayer
     [BaseType(typeof(BaseCompositionLayer), Name = "_TtC6Lottie10SolidLayer")]
     interface SolidLayer
     {
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
-
         // -(instancetype _Nonnull)initWithLayer:(id _Nonnull)layer __attribute__((objc_designated_initializer));
         [Export("initWithLayer:")]
         [DesignatedInitializer]
@@ -892,11 +721,6 @@ namespace Crjv.Lottie.iOS
     [BaseType(typeof(CompositionLayer), Name = "_TtC6Lottie20TextCompositionLayer")]
     interface TextCompositionLayer
     {
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
-
         // -(instancetype _Nonnull)initWithLayer:(id _Nonnull)layer __attribute__((objc_designated_initializer));
         [Export("initWithLayer:")]
         [DesignatedInitializer]
@@ -907,11 +731,6 @@ namespace Crjv.Lottie.iOS
     [BaseType(typeof(BaseCompositionLayer), Name = "_TtC6Lottie9TextLayer")]
     interface TextLayer
     {
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)_ __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder _);
-
         // -(instancetype _Nonnull)initWithLayer:(id _Nonnull)layer __attribute__((objc_designated_initializer));
         [Export("initWithLayer:")]
         [DesignatedInitializer]
@@ -922,11 +741,6 @@ namespace Crjv.Lottie.iOS
     [BaseType(typeof(BaseCompositionLayer), Name = "_TtC6Lottie14TransformLayer")]
     interface TransformLayer
     {
-        // -(instancetype _Nullable)initWithCoder:(NSCoder * _Nonnull)__argument1 __attribute__((objc_designated_initializer));
-        [Export("initWithCoder:")]
-        [DesignatedInitializer]
-        NativeHandle Constructor(NSCoder __argument1);
-
         // -(instancetype _Nonnull)initWithLayer:(id _Nonnull)layer __attribute__((objc_designated_initializer));
         [Export("initWithLayer:")]
         [DesignatedInitializer]
