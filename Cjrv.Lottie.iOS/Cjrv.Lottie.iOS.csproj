@@ -4,14 +4,15 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>true</ImplicitUsings>
     <IsBindingProject>true</IsBindingProject>
+    <PackageVersion>4.2.0.1</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+    <ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
     <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="..\Lottie.xcframework">
+    <NativeReference Include="fws\4.2\Lottie.xcframework">
       <Kind>Static</Kind>
       <SmartLink>True</SmartLink>
     </NativeReference>
