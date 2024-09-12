@@ -4,7 +4,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>true</ImplicitUsings>
     <IsBindingProject>true</IsBindingProject>
-    <PackageVersion>4.2.0.1</PackageVersion>
+    <PackageVersion>4.2.0.3</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
